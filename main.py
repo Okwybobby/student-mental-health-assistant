@@ -17,6 +17,7 @@ with st.sidebar:
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
     # st.markdown('📖 Student Mental Health Support System [blog](https://blog.streamlit.io/how-to-build-an-llm-powered-chatbot-with-streamlit/)!')
+    # st.markdown('📖 Student Mental Health Support System [blog](https://blog.streamlit.io/how-to-build-an-llm-powered-chatbot-with-streamlit/)!')
     
     #markdown text
     st.markdown('📖 This app offers mental health support, resources, and advice to students, especially during stressful periods like exams.')
