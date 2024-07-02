@@ -30,11 +30,11 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
 
-# Function for generating LLM response using OpenAI API
+# Function for generating LLM response using OpenAI API endpoint
 def generate_response(prompt_input, api_key):
     openai.api_key = api_key
     response = openai.Completion.create(
-        engine="gpt-3.5-turbo-instruct",
+        engine="gpt-3.5-turbo-0125",
         prompt=prompt_input,
         max_tokens=150,
         n=1,
