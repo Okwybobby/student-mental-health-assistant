@@ -41,21 +41,20 @@ def generate_response(prompt_input, api_key):
     )
     return response.choices[0].message['content']
     
-'''    
+   
 # Function for generating LLM response using OpenAI API endpoint
-def generate_response(prompt_input, api_key):
-    openai.api_key = api_key
-    response = openai.Completion.create(
-        engine="gpt-3.5-turbo-0125",
-        prompt=prompt_input,
-        max_tokens=150,
-        n=1,
-        stop=None,
-        temperature=0.7,
-    )
-    message = response.choices[0].text.strip()
-    return message
-'''
+# def generate_response(prompt_input, api_key):
+    # openai.api_key = api_key
+    # response = openai.Completion.create(
+        # engine="gpt-3.5-turbo-0125",
+        # prompt=prompt_input,
+        # max_tokens=150,
+        # n=1,
+        # stop=None,
+        # temperature=0.7,
+    # )
+    # message = response.choices[0].text.strip()
+    # return message
 
 # User-provided prompt
 if prompt := st.chat_input(disabled=not openai_api_key):
