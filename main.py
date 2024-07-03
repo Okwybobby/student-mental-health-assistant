@@ -34,6 +34,17 @@ for message in st.session_state.messages:
 # Function for generating LLM response using OpenAI API endpoint
 def generate_response(prompt_input, api_key):
     openai.api_key = api_key
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo-0125",
+        messages=[{"role": "user", "content": prompt_input}],
+        max_tokens=150,
+    )
+    return response.choices[0].message['content']
+    
+'''    
+# Function for generating LLM response using OpenAI API endpoint
+def generate_response(prompt_input, api_key):
+    openai.api_key = api_key
     response = openai.Completion.create(
         engine="gpt-3.5-turbo-0125",
         prompt=prompt_input,
@@ -44,6 +55,7 @@ def generate_response(prompt_input, api_key):
     )
     message = response.choices[0].text.strip()
     return message
+'''
 
 # User-provided prompt
 if prompt := st.chat_input(disabled=not openai_api_key):
